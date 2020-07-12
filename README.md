@@ -163,6 +163,15 @@ Test Vue App http://localhost:5666
 $ docker run -d -p 5666:80 garyascuy/dockerforui:vue
 ```
 
+## Configuration Variables
 
-## Configuration
+## Continuous Integration / Continuous Deployment
 
+- https://gitlab.com/gary.ascuy/ci-as-code
+
+## About
+
+Created by [Gary Ascuy][garyascuygithub] and Follow me in [LinkedIn][garyascuylinkedin] or [GitHub][garyascuygithub] if you want :P.
+
+[garyascuygithub]: https://github.com/gary-ascuy
+[garyascuylinkedin]: https://www.linkedin.com/in/gary-ascuy-6619bbb9/
