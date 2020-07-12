@@ -163,7 +163,53 @@ Test Vue App http://localhost:5666
 $ docker run -d -p 5666:80 garyascuy/dockerforui:vue
 ```
 
-## Configuration Variables
+## Configuration Variables (Only React)
+
+Dockerfile (./react-app/Configuration.Dockerfile)
+```
+FROM nginx:1.19-alpine
+WORKDIR /usr/share/nginx/html
+COPY ./build .
+COPY ./build/index.html /index.template.html
+ENV BACKEND_API_BASE_URL https://geolocation-db.com/json
+CMD sh -c "envsubst < /index.template.html > ./index.html && exec nginx -g 'daemon off;'"
+```
+
+`envsubst` replace env variables over the template before start
+
+index.html (./react-app/public/index.html)
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- headers... -->
+    <title>React App</title>
+    <script>
+      window.settings = { backendApi: "$BACKEND_API_BASE_URL" }
+    </script>
+  </head>
+  <body>body...</body>
+</html>
+```
+
+Docker Build
+```sh
+$ cd react-app
+$ docker build --file Configuration.Dockerfile --tag garyascuy/dockerforui:react-config .
+```
+
+Test React http://localhost:3666
+```sh
+$ docker run -d -p 3666:80 \
+     -e BACKEND_API_BASE_URL=http://geolocation-db.com/json/ \
+     garyascuy/dockerforui:react-config
+```
+
+```sh
+$ docker run -d -p 3666:80 \
+     -e BACKEND_API_BASE_URL=http://jsonplaceholder.typicode.com/users/1 \
+     garyascuy/dockerforui:react-config
+```
 
 ## Continuous Integration / Continuous Deployment
 

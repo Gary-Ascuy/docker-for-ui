@@ -25,6 +25,10 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+    <script>
+      window.settings = { backendApi: "%REACT_APP_BACKEND_API_BASE_URL%" || "$BACKEND_API_BASE_URL" }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
