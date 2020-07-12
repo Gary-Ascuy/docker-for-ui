@@ -96,14 +96,28 @@ $ serve -s ./dist
 
 ## Basic Docker Images 
 
+### React
+
+Dockerfile (./react-app/Dockerfile)
+```
+FROM nginx:1.19-alpine
+WORKDIR /usr/share/nginx/html
+COPY ./build .
+```
+
+Docker Build
+```sh
+$ cd react-app
+$ docker build --tag garyascuy/dockerforui:react .
+```
+
+Test React http://localhost:3666
+```sh
+$ docker run -p 3666:80 garyascuy/dockerforui:1.0.0-react
+```
+
+### Angular
 
 
 ## Configuration
-
-
-## Summary 
-
-```sh
-$ yarn 
-```
 
