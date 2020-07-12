@@ -1,0 +1,4 @@
+{
+  "private": true,
+  "workspaces": ["react-app", "angular-app", "vue-app"]
+}

@@ -15,6 +15,7 @@ Execute `yarn install` to download dependencies in all projects.
 
 ```sh
 $ npx create-react-app react-app
+$ cd react-app
 ```
 
 Start Development
@@ -34,6 +35,7 @@ by default it leaves build into `./build`
 ```sh
 $ npm install --global @angular/cli
 $ ng new angular-app
+$ cd angular-app
 ```
 
 Start Development ( alias from `ng serve` )
@@ -52,6 +54,7 @@ by default it leaves build into `./dist`
 ```sh
 $ npm install --global @vue/cli
 $ vue create vue-app
+$ cd vue-app
 ```
 
 Start Development ( alias from `vue-cli-service serve` )
@@ -75,16 +78,19 @@ $ npm install --global serve
 
 React 
 ```sh
+$ cd react-app
 $ serve -s build       
 ```
 
 Angular
 ```sh
+$ cd angular-app
 $ serve -s ./dist/angular-app
 ```
 
-Angular
+Vue
 ```sh
+$ cd vue-app
 $ serve -s ./dist
 ```
 
@@ -92,5 +98,12 @@ $ serve -s ./dist
 
 
 
-## Configuration 
+## Configuration
+
+
+## Summary 
+
+```sh
+$ yarn 
+```
 
